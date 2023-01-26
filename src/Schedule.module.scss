@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+
+$mainLight : rgb(233, 233, 233);
+$mainMedium : rgb(176, 175, 175);
+$mainDark : rgb(49, 49, 49);
+$itemSelect : rgb(246, 246, 246);
+
+.dayTemplate {
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
+
+
+    .row {
+        display: flex;
+        align-items: center;
+        border-radius: 15px;
+        background-color: $mainLight;
+        padding: 1.5rem;
+        margin: 0.5rem;
+        filter: drop-shadow(3px 3px 4px $mainMedium);
+        border-left: 1rem solid rgb(120, 174, 120);
+
+
+        .checkbox {
+            height: 23px;
+            width: 30px;
+            color: red;
+        }
+
+        .button {
+            border-radius: 6px;
+            border: none;
+            margin-left: 1rem;
+            background-color: $mainDark;
+            color: $mainLight;
+            padding: 0.5rem 1.5rem;
+        }
+
+        .button:hover {
+            background-color: $mainMedium;
+            color: $mainDark;
+            cursor: pointer;
+        }
+
+        .rowDay:first-letter {
+            text-transform: uppercase
+        }
+    }
+}
+
+.row:hover {
+    background-color: $itemSelect;
+}

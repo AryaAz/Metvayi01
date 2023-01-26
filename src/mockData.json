@@ -1,0 +1,62 @@
+{
+    "id": 1,
+    "name": "Ari",
+    "weekPlan": {
+        "sunday": {
+            "date": "01/11/1401",
+            "exercises": {
+                "run": "3km WU + 10 x (1km @ pace 4:30 + 30s rest) + 1km CD",
+                "strength": "3 x (10 x push ups + 15 pull ups + 10 x lunges)",
+                "yoga": "Downward Facing Dog : 5 to 6 breaths, Rag Doll : 5 to 6 breaths"
+            }
+        },
+        "monday": {
+            "date": "02/11/1401",
+            "exercises": {
+                "run": "3km WU + 10 x (1km @ pace 4:30 + 30s rest) + 1km CD",
+                "strength": "3 x (10 x push ups + 15 pull ups + 10 x lunges)",
+                "yoga": "Downward Facing Dog : 5 to 6 breaths, Rag Doll : 5 to 6 breaths"
+            }
+        },
+        "tuesday": {
+            "date": "03/11/1401",
+            "exercises": {
+                "run": "3km WU + 10 x (1km @ pace 4:30 + 30s rest) + 1km CD",
+                "strength": "3 x (10 x push ups + 15 pull ups + 10 x lunges)",
+                "yoga": "Downward Facing Dog : 5 to 6 breaths, Rag Doll : 5 to 6 breaths"
+            }
+        },
+        "wednesday": {
+            "date": "04/11/1401",
+            "exercises": {
+                "run": "3km WU + 10 x (1km @ pace 4:30 + 30s rest) + 1km CD",
+                "strength": "3 x (10 x push ups + 15 pull ups + 10 x lunges)",
+                "yoga": "Downward Facing Dog : 5 to 6 breaths, Rag Doll : 5 to 6 breaths"
+            }
+        },
+        "thursday": {
+            "date": "05/11/1401",
+            "exercises": {
+                "run": "3km WU + 10 x (1km @ pace 4:30 + 30s rest) + 1km CD",
+                "strength": "3 x (10 x push ups + 15 pull ups + 10 x lunges)",
+                "yoga": "Downward Facing Dog : 5 to 6 breaths, Rag Doll : 5 to 6 breaths"
+            }
+        },
+        "friday": {
+            "date": "06/11/1401",
+            "exercises": {
+                "run": "3km WU + 10 x (1km @ pace 4:30 + 30s rest) + 1km CD",
+                "strength": "3 x (10 x push ups + 15 pull ups + 10 x lunges)",
+                "yoga": "Downward Facing Dog : 5 to 6 breaths, Rag Doll : 5 to 6 breaths"
+            }
+        },
+        "saturday": {
+            "date": "07/11/1401",
+            "exercises": {
+                "run": "3km WU + 10 x (1km @ pace 4:30 + 30s rest) + 1km CD",
+                "strength": "3 x (10 x push ups + 15 pull ups + 10 x lunges)",
+                "yoga": "Downward Facing Dog : 5 to 6 breaths, Rag Doll : 5 to 6 breaths"
+            }
+        }
+    }
+}
