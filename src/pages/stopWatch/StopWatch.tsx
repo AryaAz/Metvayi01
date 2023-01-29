@@ -1,13 +1,13 @@
-import React, {useMemo, useRef, useState} from 'react';
-import style from './StopWatch.module.scss'
+import React, {useEffect, useMemo, useRef, useState} from 'react';
+import './StopWatch.scss'
 
 const StopWatch = () => {
 
-    const [timer, setTimer] = useState(0)
-    const [name, setName] = useState("");
-    const [nameEditMode, setNameEditMode] = useState(false)
-    const [isRunning, setIsRunning] = useState(false)
-    let intervalRef = useRef(0);
+    const [timer, setTimer] = useState<number>(0)
+    const [name, setName] = useState<string>("");
+    const [nameEditMode, setNameEditMode] = useState<boolean>(false)
+    const [isRunning, setIsRunning] = useState<boolean>(false)
+    let intervalRef = useRef<NodeJS.Timer>();
 
     function handleStart() {
         setIsRunning(true)
@@ -30,19 +30,24 @@ const StopWatch = () => {
 
     console.log("render stop watch")
 
+
     const timerFormatted = useMemo(() => {
         console.log("format timer")
-        let min = Math.floor(timer / 60)
-        let sec = timer % 60
+        let min = Math.floor(timer / 60) as string | number
+        let sec = timer % 60 as string | number
         min = min < 10 ? "0" + min : min
         sec = sec < 10 ? "0" + sec : sec
         return `${min}:${sec}`
     }, [timer])
 
+    useEffect(() => {
+        // handleStart();
+    }, [])
+
     // console.log("15",timer)
     return (
-        <div className={style.stopWatch}>
-            <div className={style.card}>
+        <div className={"stopWatch"}>
+            <div className={"card"}>
 
                 <h1>Stop Watch</h1>
                 <div>
@@ -53,10 +58,10 @@ const StopWatch = () => {
                             <span>{name}</span>
                         </>
                     }
-                    <button onClick={() => setNameEditMode(mode => !mode)}>{nameEditMode ? 'Save':'Edit'}</button>
+                    <button onClick={() => setNameEditMode(mode => !mode)}>{nameEditMode ? 'Save' : 'Edit'}</button>
                 </div>
                 <span>{timerFormatted}</span>
-                <div className={style.btns}>
+                <div className="btns">
                     <button disabled={isRunning} onClick={handleStart}>{timer === 0 ? 'Start' : "Resume"}</button>
                     {isRunning && <button onClick={handlePause}>Pause</button>}
                     {isRunning && <button onClick={handleStop}>Stop</button>}
