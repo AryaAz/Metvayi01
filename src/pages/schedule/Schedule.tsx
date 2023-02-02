@@ -1,17 +1,17 @@
 import mockData from "../../mockData.json"
 import React, {useState} from "react";
 import "./Schedule.scss"
-import {EDays, ScheduleModel} from "../../model/schedule.model";
+import {EDays, AthleteModel} from "../../model/athleteModel";
 import ScheduleItem from "./scheduleItem";
 
 
 const Schedule = () => {
 
     const [selectedDay, setSelectedDay] = useState<EDays>()
-    const [data, setData] = useState<ScheduleModel>(mockData);
+    const [data, setData] = useState<any>(mockData);
 
     const clearDay = (day: EDays) => {
-        setData(prevData => {
+        setData((prevData:any) => {
             const newData = {...prevData};
             newData.weekPlan[day].exercises.run = "free";
             newData.weekPlan[day].exercises.strength = "free";

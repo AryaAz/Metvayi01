@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import mockData from "../../mockData.json";
-import {DayPlan, EDays} from "../../model/schedule.model";
+import {DayPlan, EDays} from "../../model/athleteModel";
 
 interface ScheduleItemProps {
     dayPlay: DayPlan;

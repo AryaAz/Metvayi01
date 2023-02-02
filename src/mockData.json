@@ -1,6 +1,8 @@
 {
     "id": 1,
     "name": "Ari",
+    "age": 10,
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/689.jpg",
     "weekPlan": {
         "sunday": {
             "date": "01/11/1401",

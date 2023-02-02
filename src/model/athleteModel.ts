@@ -1,6 +1,8 @@
-export interface ScheduleModel {
+export interface AthleteModel {
     id: number;
     name: string;
+    avatar : string;
+    age : number,
     weekPlan: Record<EDays, DayPlan>
 }
 
