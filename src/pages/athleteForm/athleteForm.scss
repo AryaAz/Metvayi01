@@ -1,31 +1,19 @@
 @import "../../assets/mixins";
 
-.athleteList {
+.athleteForm {
   padding: 2rem 15%;
   font-family: sans-serif;
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  section {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
-
-  article {
-    background-color: lightgray;
-    border-radius: 0.5rem;
-    padding: 1rem;
-  }
 
   form {
     display: grid;
     gap: 1rem;
     margin-bottom: 2rem;
+
+    label {
+      display: grid;
+      grid-template-columns: 4rem 1fr;
+      align-items: center;
+    }
 
     input {
       all: unset;
