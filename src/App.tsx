@@ -4,6 +4,8 @@ import AthleteForm from "./pages/athleteForm/athleteForm";
 import Schedule from "./pages/schedule/Schedule";
 import Login from "./pages/login/login";
 import Layout from "./components/layout/layout";
+import Counter from "./pages/counter/counter";
+import {CounterProvider} from "./pages/counter/counterContext";
 
 const isLogin = !!localStorage.getItem("token")
 
@@ -24,6 +26,9 @@ const routes: RouteObject[] = [
             }, {
                 path: "detail",
                 element :  <Schedule/> ,
+            },{
+                path: "counter",
+                element :  <CounterProvider/> ,
             },
         ]
     },
