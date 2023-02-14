@@ -1,21 +1,20 @@
 import React, {useState} from 'react';
 import {Button, Card, TextField, Typography} from "@mui/material";
-import './login.scss'
+import './register.scss'
 import {AuthService} from "../../service/authService";
-import {useDispatch} from "react-redux";
-import {login} from "../../store/slice/auth.slice";
 
 interface FormType {
-    username: string
+    email: string
     password: string
+    name: string
 }
 
-const Login = () => {
+const Register = () => {
 
-    const dispatch = useDispatch()
     const [form, setForm] = useState<FormType>({
-        username: "mohammad.metvayi1@gmail.com",
-        password: "asdasd",
+        email: "",
+        password: "",
+        name: "",
     })
 
     function handleChangeForm(e: React.ChangeEvent<HTMLInputElement>) {
@@ -26,9 +25,9 @@ const Login = () => {
 
 
     function handleSubmit() {
-        AuthService.login(form)
+        AuthService.register(form)
             .then(res => {
-                dispatch(login(res.data))
+                alert("success")
             }).catch(err => {
             alert("err")
         })
@@ -37,13 +36,14 @@ const Login = () => {
     return (
         <div className="register">
             <Card className="register__card">
-                <Typography>Login</Typography>
-                <TextField label="Username" name="username" value={form.username} onChange={handleChangeForm}/>
+                <Typography>Register</Typography>
+                <TextField label="Email" name="email" value={form.email} onChange={handleChangeForm}/>
                 <TextField label="Password" name="password" value={form.password} onChange={handleChangeForm}/>
-                <Button onClick={handleSubmit}>Login</Button>
+                <TextField label="Name" name="name" value={form.name} onChange={handleChangeForm}/>
+                <Button onClick={handleSubmit}>Register</Button>
             </Card>
         </div>
     );
 };
 
-export default Login;
+export default Register;

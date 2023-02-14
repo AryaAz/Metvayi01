@@ -4,52 +4,56 @@ import AthleteForm from "./pages/athleteForm/athleteForm";
 import Schedule from "./pages/schedule/Schedule";
 import Login from "./pages/login/login";
 import Layout from "./components/layout/layout";
-import Counter from "./pages/counter/counter";
 import {CounterProvider} from "./pages/counter/counterContext";
+import Register from "./pages/register/register";
+import Profile from "./pages/profile/profile";
+import {useAppSelector} from "./store/store";
 
-const isLogin = !!localStorage.getItem("token")
-
-const routes: RouteObject[] = [
-    {
-        path: "/",
-        element: isLogin ? <Layout></Layout> : <Navigate to="/login"/>,
-        children: [
-            {
-                path: "",
-                element :  <AthleteList/> ,
-            }, {
-                path: "create",
-                element :  <AthleteForm/> ,
-            }, {
-                path: "edit/:id",
-                element :  <AthleteForm/> ,
-            }, {
-                path: "detail",
-                element :  <Schedule/> ,
-            },{
-                path: "counter",
-                element :  <CounterProvider/> ,
-            },
-        ]
-    },
-    {
-        path: "/login",
-        element: isLogin ? <Navigate to="/"></Navigate> : <Login/>,
-    }
-]
 
 function App() {
+
+    const isLogin = useAppSelector(state=>state.auth.isAuthenticated)
+
+    const routes: RouteObject[] = [
+        {
+            path: "/",
+            element: isLogin ? <Layout></Layout> : <Navigate to="/login"/>,
+            children: [
+                {
+                    path: "",
+                    element: <AthleteList/>,
+                }, {
+                    path: "profile",
+                    element: <Profile/>,
+                }, {
+                    path: "create",
+                    element: <AthleteForm/>,
+                }, {
+                    path: "edit/:id",
+                    element: <AthleteForm/>,
+                }, {
+                    path: "detail",
+                    element: <Schedule/>,
+                }, {
+                    path: "counter",
+                    element: <CounterProvider/>,
+                },
+            ]
+        },
+        {
+            path: "/login",
+            element: isLogin ? <Navigate to="/profile"></Navigate> : <Login/>,
+        },
+        {
+            path: "/register",
+            element: isLogin ? <Navigate to="/profile"></Navigate> : <Register/>,
+        }
+    ]
 
     const routesRendered = useRoutes(routes)
 
     return (
         <div className="App">
-            {/*<Routes>*/}
-            {/*    <Route path="/" element={<AthleteList/>}></Route>*/}
-            {/*    <Route path="/create" element={<AthleteForm/>}></Route>*/}
-            {/*    <Route path="/edit/:id" element={<AthleteForm/>}></Route>*/}
-            {/*    <Route path="/detail" element={<Schedule/>}></Route>*/}
-            {/*</Routes>*/}
             {routesRendered}
         </div>
     );
